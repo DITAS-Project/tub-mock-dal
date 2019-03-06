@@ -26,7 +26,7 @@ func (dal *Server) StartAndListen() {
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", dal.port))
 
 	if err != nil {
-
+		log.Fatalf("Failed to listen to :%d - %+v", dal.port, err)
 	}
 
 	server := grpc.NewServer()
